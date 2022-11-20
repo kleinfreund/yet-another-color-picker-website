@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+	<title>yet-another-color-picker</title>
+
+
+	<link rel="stylesheet" href="./node_modules/yet-another-color-picker/dist/ColorPicker.css">
+
+	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		body {
+			--hue: 0.75;
+
+			tab-size: 2;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.5;
+			font-family: Lato, Numero, sans-serif;
+			background-color: hsl(calc(var(--hue) * 360) 50% 95%);
+		}
+
+		main {
+			width: min(1000px, 100%);
+			padding: clamp(0.5rem, 3vh, 2.5rem) clamp(0.5rem, 3vw, 2.5rem);
+		}
+
+		footer {
+			margin-top: 5rem;
+		}
+
+		:focus {
+			outline: 3px solid orange;
+		}
+
+		a {
+			color: hsl(calc(var(--hue) * 360) 100% 20%);
+		}
+
+		h1,
+		h2 {
+			font-family: Cambria, Caladea, Cochin, Georgia, Times, "Times New Roman", serif;
+		}
+
+		h1,
+		h2,
+		p,
+		ul,
+		pre,
+		details {
+			margin-top: 1.25rem;
+			margin-bottom: 0;
+		}
+
+		h1:first-child,
+		h2:first-child,
+		p:first-child,
+		ul:first-child {
+			margin-top: 0;
+		}
+
+		pre {
+			overflow-x: auto;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			background-color: hsl(calc(var(--hue) * 360) 100% 92.5%);
+		}
+
+		code {
+			font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		}
+
+		.cp-color-picker {
+			margin-top: 1.25rem;
+		}
+
+	</style>
+</head>
+
+<body>
+	<main>
+		<h1><a href="/">yet-another-color-picker</a></h1>
+
+		<p>A color picker web component.</p>
+
+		<ul>
+			<li>
+				Package:
+
+				<a href="https://www.npmjs.com/package/yet-another-color-picker">
+					<b>npmjs.com</b>/package/yet-another-color-picker
+				</a>
+			</li>
+
+			<li>
+				Repository:
+
+				<a href="https://github.com/kleinfreund/yet-another-color-picker">
+					<b>github.com</b>/kleinfreund/yet-another-color-picker
+				</a>
+			</li>
+		</ul>
+
+		<h2>Demo</h2>
+
+		<color-picker></color-picker>
+
+		<h2>Installation</h2>
+
+		<pre><code>npm install yet-another-color-picker</code></pre>
+
+		<h2>Usage</h2>
+
+		<p>HTML:</p>
+
+		<pre><code>&lt;color-picker&gt;&lt;/color-picker&gt;</code></pre>
+
+		<p>JavaScript:</p>
+
+		<p>Import the <code>ColorPicker</code> custom element class and define it.</p>
+
+		<pre><code>import { ColorPicker } from 'yet-another-color-picker'
+
+window.customElements.define('color-picker', ColorPicker)</code></pre>
+
+		<p>Made with love by <a href="https://kleinfreund.de">Philipp</a>.</p>
+	</main>
+
+	<script type="module">
+		import { ColorPicker } from 'yet-another-color-picker'
+
+		window.customElements.define('color-picker', ColorPicker)
+
+		const colorPicker = document.querySelector('color-picker')
+		colorPicker.addEventListener('color-change', colorChangeListener)
+
+		/**
+		 * @param {CustomEvent<ColorChangeDetail>} event
+		 */
+		function colorChangeListener(event) {
+			console.log(event.detail)
+		}
+	</script>
+</body>
+
+</html>
