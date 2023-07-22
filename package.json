@@ -18,9 +18,9 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"yet-another-color-picker": "^1.0.0"
+		"yet-another-color-picker": "^1.0.1"
 	},
 	"devDependencies": {
-		"vite": "^4.2.0"
+		"vite": "^4.4.6"
 	}
 }
