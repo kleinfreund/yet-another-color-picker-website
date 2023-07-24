@@ -111,11 +111,13 @@
 
 		<color-picker></color-picker>
 
-		<h2>Installation</h2>
+		<h2>Installation & usage</h2>
+
+		<p>Install the package.</p>
 
 		<pre><code>npm install yet-another-color-picker</code></pre>
 
-		<h2>Usage</h2>
+		<p>Import the module to define the custom element.</p>
 
 		<p>HTML:</p>
 
@@ -123,29 +125,24 @@
 
 		<p>JavaScript:</p>
 
-		<p>Import the <code>ColorPicker</code> custom element class and define it.</p>
+		<pre><code>import 'yet-another-color-picker'</code></pre>
 
-		<pre><code>import { ColorPicker } from 'yet-another-color-picker'
+		<p>Make sure to also load the color picker styles.</p>
 
-window.customElements.define('color-picker', ColorPicker)</code></pre>
+		<p>HTML:</p>
+
+		<pre><code>&lt;link rel="stylesheet" href="./node_modules/yet-another-color-picker/dist/ColorPicker.css"&gt;</code></pre>
 
 		<p>Made with love by <a href="https://kleinfreund.de">Philipp</a>.</p>
 	</main>
 
 	<script type="module">
-		import { ColorPicker } from 'yet-another-color-picker'
-
-		window.customElements.define('color-picker', ColorPicker)
+		import 'yet-another-color-picker'
 
 		const colorPicker = document.querySelector('color-picker')
-		colorPicker.addEventListener('color-change', colorChangeListener)
-
-		/**
-		 * @param {CustomEvent<ColorChangeDetail>} event
-		 */
-		function colorChangeListener(event) {
+		colorPicker.addEventListener('color-change', function (event) {
 			console.log(event.detail)
-		}
+		})
 	</script>
 </body>
 
