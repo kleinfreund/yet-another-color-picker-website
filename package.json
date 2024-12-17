@@ -21,6 +21,6 @@
 		"yet-another-color-picker": "^4.0.0"
 	},
 	"devDependencies": {
-		"vite": "^5.4.9"
+		"vite": "^6.0.3"
 	}
 }
